@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: notification-api
+
+server:
+  port: 8084

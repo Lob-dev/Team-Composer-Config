@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: account-api
+
+server:
+  port: 8082
