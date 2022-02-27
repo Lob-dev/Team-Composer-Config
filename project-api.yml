@@ -1,6 +1,35 @@
 spring:
-  application:
-    name: project-api
+  cloud:
+    config:
+      discovery:
+        enabled: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/project?allowPublicKeyRetrieval=true
+    username: root
+    password: 1111
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      show-sql: true
+      format_sql: true
+    open-in-view: false
+
+rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9001/eureka
 
 server:
   port: 8083
