@@ -4,6 +4,23 @@ spring:
       discovery:
         enabled: true
 
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: httptrace, prometheus, metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoint:
+    health:
+      show-details: always
+
 eureka:
   client:
     register-with-eureka: true
